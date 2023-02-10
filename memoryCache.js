@@ -48,6 +48,7 @@ module.exports = class MemoryCache {
     async get(key) {
         // Do we have this key in our cache?
         if (!this._nodesByKey.has(key)) {
+          
             return { cached: false, value: null };
         }
 
@@ -57,9 +58,9 @@ module.exports = class MemoryCache {
         // TODO: Check for expiry, and clear if expired.
 
         // Mark as most recently read.
-        this._mostRecentlyRead.moveToBack(node);
+        this._mostRecentlyRead.moveToFront(node);
 
-        return { cached: false, value: item.value };
+        return { cached: true, value: item.value };
     }
 
     /**
@@ -75,6 +76,7 @@ module.exports = class MemoryCache {
         // TODO: Store expiry too, and clear when expired.
         const item = { key, value };
         this._mostRecentlyRead.addToFront(item);
+        //console.log(`Head: ${this._mostRecentlyRead.head.value}`)
         this._nodesByKey.set(key, this._mostRecentlyRead.head);
 
         // If we're over capacity, evict least recently read items.
