@@ -1,0 +1,12 @@
+h1 {
+  color: darkred;
+}
+
+h2 {
+    text-decoration: wavy;
+    color: red;
+}
+
+div {
+    background-color: rgb(213, 243, 243);
+}
