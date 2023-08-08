@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Keep track of pantry items at all times",
   "main": "App.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [
     "pantry",
     "kitchen",
@@ -19,6 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
   }
 }
