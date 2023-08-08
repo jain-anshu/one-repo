@@ -2,7 +2,7 @@
   "name": "PantryStocker",
   "version": "1.0.0",
   "description": "Keep track of pantry items at all times",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
   }
 }
