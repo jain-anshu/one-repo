@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Keep track of pantry items at all times",
   "main": "App.js",
-  "scripts": {},
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
   "keywords": [
     "pantry",
     "kitchen",
