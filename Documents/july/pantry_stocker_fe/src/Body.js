@@ -1,3 +1,3 @@
-export const Body = function() {
+export const Body = function () {
     return <h1>Body</h1>
 }
