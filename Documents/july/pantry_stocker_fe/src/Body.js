@@ -12,7 +12,6 @@ export const Body = function () {
         quantity: 0,
         alsoKnownAs: ""
     });
-    console.log(ingredient.name)
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -39,21 +38,30 @@ export const Body = function () {
     }
 
     return (
-        <form>
-            <label>Ingredient Name
-                <input placeholder="Enter Ingredient name" value={ingredient.name} onChange={(e) => setIngredient({ ...ingredient, name: e.target.value })} className="FormField">
 
+        <form className="Form">
+            <div className="FormHeader">Add a New Ingredient</div>
+            <label className="FormField">Ingredient Name
+                <input placeholder="Enter Ingredient name" value={ingredient.name} onChange={(e) => setIngredient({ ...ingredient, name: e.target.value })} className="FormField">
                 </input>
             </label>
-            <label>Is this a basic ingredient?
+            <label className="FormField">Is this a basic ingredient?
                 <input type="checkbox" checked={ingredient.is_basic} onChange={(e) => setIngredient({ ...ingredient, is_basic: e.target.checked })} className="FormField">
                 </input>
             </label>
-            <label>Is this a family favorite?
+            <label className="FormField">Is this a family favorite?
                 <input type="checkbox" checked={ingredient.is_family_favorite} onChange={(e) => setIngredient({ ...ingredient, is_family_favorite: e.target.checked })} className="FormField">
                 </input>
             </label>
-            <button onClick={handleSubmit}>Add</button>
+            <label className="FormField">How much of this ingredient is left?
+                <select value={ingredient.status} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
+                    <option value={1}> Enough</option>
+                    <option value={2}> Some</option>
+                    <option value={3}> None</option>
+                </select>
+
+            </label>
+            <button onClick={handleSubmit} className="Button">Add</button>
         </form >
     )
 }
