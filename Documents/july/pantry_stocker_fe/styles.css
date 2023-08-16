@@ -18,35 +18,43 @@
   list-style: none;
 }
 .MenuItem {
-  padding: 20px;
+  padding: 10px;
   margin: 20px;
 }
 
 .Form {
   display: flex;
-  margin: 20px;
-  height: 600px;
-  width: 400px;
-  border: 1px solid lightgrey;
-  border-radius: 5%;
+  margin: 0 20px 20px 20px;
+  height: 300px;
+  width: 350px;
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-radius: 0 0 10 10;
   flex-direction: column;
   padding: 20px;
   align-items: center;
 }
 
 .FormField {
-  margin: 20px;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 
 .FormHeader {
-  background-color: brown;
+  background-color: rgb(127, 76, 6);
   font-size: larger;
   color: white;
-  width: 100%;
-  height: 100px;
-  margin: 0;
+  width: 350px;
+  height: 50px;
+  padding: 20px 20px 0 20px;
+  margin: 20px 20px 0 20px;
   text-align: center;
+  justify-content: center;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-radius: 10 10 0 0;
 }
 
 .Button {
@@ -55,4 +63,9 @@
   margin: 50px;
   padding: 10px;
   background-color: olivedrab;
+  color: white;
+}
+
+.InputPage {
+  display: flex;
 }

@@ -38,30 +38,61 @@ export const Body = function () {
     }
 
     return (
+        <div className="InputPage">
+            <div>
+                <div className="FormHeader">Add a New Ingredient</div>
+                <form className="Form">
 
-        <form className="Form">
-            <div className="FormHeader">Add a New Ingredient</div>
-            <label className="FormField">Ingredient Name
-                <input placeholder="Enter Ingredient name" value={ingredient.name} onChange={(e) => setIngredient({ ...ingredient, name: e.target.value })} className="FormField">
-                </input>
-            </label>
-            <label className="FormField">Is this a basic ingredient?
-                <input type="checkbox" checked={ingredient.is_basic} onChange={(e) => setIngredient({ ...ingredient, is_basic: e.target.checked })} className="FormField">
-                </input>
-            </label>
-            <label className="FormField">Is this a family favorite?
-                <input type="checkbox" checked={ingredient.is_family_favorite} onChange={(e) => setIngredient({ ...ingredient, is_family_favorite: e.target.checked })} className="FormField">
-                </input>
-            </label>
-            <label className="FormField">How much of this ingredient is left?
-                <select value={ingredient.status} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
-                    <option value={1}> Enough</option>
-                    <option value={2}> Some</option>
-                    <option value={3}> None</option>
-                </select>
+                    <label className="FormField">Ingredient Name
+                        <input placeholder="Enter Ingredient name" value={ingredient.name} onChange={(e) => setIngredient({ ...ingredient, name: e.target.value })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">Is this a basic ingredient?
+                        <input type="checkbox" checked={ingredient.is_basic} onChange={(e) => setIngredient({ ...ingredient, is_basic: e.target.checked })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">Is this a family favorite?
+                        <input type="checkbox" checked={ingredient.is_family_favorite} onChange={(e) => setIngredient({ ...ingredient, is_family_favorite: e.target.checked })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">How much of this ingredient is left?
+                        <select value={ingredient.status} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
+                            <option value={1}> Enough</option>
+                            <option value={2}> Some</option>
+                            <option value={3}> None</option>
+                        </select>
 
-            </label>
-            <button onClick={handleSubmit} className="Button">Add</button>
-        </form >
+                    </label>
+                    <button onClick={handleSubmit} className="Button">Add</button>
+                </form >
+            </div>
+            <div>
+                <div className="FormHeader">Add a New Store</div>
+                <form className="Form">
+
+                    <label className="FormField">Store Name
+                        <input placeholder="Enter Ingredient name" value={ingredient.name} onChange={(e) => setIngredient({ ...ingredient, name: e.target.value })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">Is this a basic ingredient?
+                        <input type="checkbox" checked={ingredient.is_basic} onChange={(e) => setIngredient({ ...ingredient, is_basic: e.target.checked })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">Is this a family favorite?
+                        <input type="checkbox" checked={ingredient.is_family_favorite} onChange={(e) => setIngredient({ ...ingredient, is_family_favorite: e.target.checked })} className="FormField">
+                        </input>
+                    </label>
+                    <label className="FormField">How much of this ingredient is left?
+                        <select value={ingredient.status} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
+                            <option value={1}> Enough</option>
+                            <option value={2}> Some</option>
+                            <option value={3}> None</option>
+                        </select>
+
+                    </label>
+                    <button onClick={handleSubmit} className="Button">Add</button>
+                </form >
+            </div>
+        </div>
     )
 }
