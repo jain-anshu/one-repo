@@ -1,9 +1,9 @@
 .Header {
   width: 100%;
   height: 100px;
-  color: rgb(2, 82, 2);
-  background-color: rgb(255, 204, 0);
-  padding: 50px;
+  color: olivedrab;
+  background-color: rgb(221, 202, 124);
+  padding: 10px;
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -51,9 +51,9 @@
   margin: 20px 20px 0 20px;
   text-align: center;
   justify-content: center;
-  border-top: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
+  border-top: 1px solid rgb(127, 76, 6);
+  border-left: 2px solid rgb(127, 76, 6);
+  border-right: 1px solid rgb(127, 76, 6);
   border-radius: 10 10 0 0;
 }
 
@@ -64,6 +64,8 @@
   padding: 10px;
   background-color: olivedrab;
   color: white;
+  border-radius: 10;
+  border: none;
 }
 
 .InputPage {
