@@ -19,14 +19,7 @@ export const Body = function () {
         has_delivery: false,
         website_url: ""
     });
-    const [ingredientList, setIngredientList] = useState([{
-        name: "Rice",
-        is_basic: true,
-        is_family_favorite: false,
-        categories_id: 1,
-        units_id: 1,
-        status: 3
-    }]);
+
     const handleSubmitIngredient = async (e) => {
         e.preventDefault();
         try {
@@ -75,29 +68,6 @@ export const Body = function () {
 
     }
 
-    const getIngredientList = async () => {
-        try {
-            const response = await fetch("http://localhost:3000/ingredients?page=1&per_page=2")
-            if (response.ok) {
-                const responseData = await response.json();
-
-                console.log('Response:', responseData);
-                return responseData['ingredients']
-            } else {
-                console.error('Request failed:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Request error:', error);
-        }
-    };
-    useEffect(() => {
-        const fetchIngredientList = async () => {
-            const ingredients = await getIngredientList();
-            setIngredientList(ingredients);
-        };
-
-        fetchIngredientList()
-    }, []);
 
     return (
         <div className="InputPage">
@@ -152,13 +122,6 @@ export const Body = function () {
                 </form >
 
             </div>
-            <div>
-                <h1> Ingredients Available</h1>
-                {ingredientList.map((ingredient) => (
-                    <ol>
-                        <li>{ingredient.name}</li>
-                        <li>{ingredient.is_basic ? "Basic" : "Optional"}</li>
-                    </ol>))}
-            </div>
+
         </div >
     )

@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { Footer } from './src/Footer';
 import { Header } from './src/Header';
 import { Body } from './src/Body';
 import { ShoppingList } from './src/ShoppingList';
+import Stores from './src/Stores';
+import ErrorPage from './src/ErrorPage';
 
 
 const MainPage = function () {
     return (
         <>
             <Header />
-            <Body />
+            <Outlet />
             <Footer />
         </>
     );
@@ -19,8 +21,16 @@ const MainPage = function () {
 
 const AppRouter = createBrowserRouter(
     [
-        { path: '/', element: <MainPage /> },
-        { path: '/ShoppingList', element: <ShoppingList /> }
+        {
+            path: '/', element: <MainPage />,
+            children: [
+                { path: '/', element: <Body /> },
+                { path: '/ShoppingList', element: <ShoppingList />, errorElement: <ErrorPage /> },
+                { path: '/Stores', element: <Stores />, errorElement: <ErrorPage /> }
+
+            ],
+            errorElement: <ErrorPage />
+        },
     ],
 );
 
