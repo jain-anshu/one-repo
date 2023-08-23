@@ -9,7 +9,7 @@ const Stores = function () {
                 const responseData = await response.json();
 
                 console.log('Response:', responseData);
-                return responseData['stores']
+                return responseData; //['stores']
             } else {
                 console.error('Request failed:', response.statusText);
             }
@@ -31,12 +31,15 @@ const Stores = function () {
             <h1>Stores Near me</h1>
             <div>
                 {storeList.map((store) => (
-                    <ol>
-                        <li>{store.name}</li>
-                        <li>{store.has_website ? "Has Website" : "No Website"}</li>
-                        <li>{store.has_delivery ? "Has Delivery" : "No Delivery"}</li>
-                        <li>{store.website_url}</li>
-                    </ol>))}
+                    <div>
+                        <h3>{store.name}</h3>
+                        <ul>
+
+                            <li>{store.has_website ? "Has Website" : "No Website"}</li>
+                            <li>{store.has_delivery ? "Has Delivery" : "No Delivery"}</li>
+                            {store.has_website && <li>{store.website_url}</li>}
+                        </ul>
+                    </div>))}
             </div>
         </div>)
 }
