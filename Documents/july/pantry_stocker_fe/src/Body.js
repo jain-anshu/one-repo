@@ -8,7 +8,7 @@ export const Body = function () {
         is_family_favorite: false,
         category: "Spices",
         status: 3,
-        units: "lbs",
+        unit: "lbs",
         quantity: 0,
         alsoKnownAs: ""
     });
@@ -86,6 +86,22 @@ export const Body = function () {
                     <label className="FormField">Is this a family favorite?
                         <input type="checkbox" checked={ingredient.is_family_favorite} onChange={(e) => setIngredient({ ...ingredient, is_family_favorite: e.target.checked })} className="FormField">
                         </input>
+                    </label>
+                    <label className="FormField">Which kind of ingredient is it?
+                        <select value={ingredient.category} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
+                            <option value={1}> Grains</option>
+                            <option value={2}> Spices</option>
+                            <option value={3}> Misc</option>
+                        </select>
+                    </label>
+                    <label className="FormField">In what units do you buy this ingredient?
+                        <select value={ingredient.unit} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
+                            <option value={1}> lbs</option>
+                            <option value={2}> oz</option>
+                            <option value={3}> count</option>
+                            <option value={4}> grams</option>
+                            <option value={5}> Misc</option>
+                        </select>
                     </label>
                     <label className="FormField">How much of this ingredient is left?
                         <select value={ingredient.status} onChange={(e) => setIngredient({ ...ingredient, status: e.target.value })}>
